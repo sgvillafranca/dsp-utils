@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.166.1/containers/cpp
+{
+	"name": "C++",
+	"build": {
+		"dockerfile": "Dockerfile",
+		//"context": "..",
+		// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-10, debian-9, ubuntu-20.04, ubuntu-18.04
+		"args": {
+			"VARIANT": "ubuntu-20.04"
+		}
+	},
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+		"--privileged"
+	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools",
+		"ms-vscode.cmake-tools",
+		"matepek.vscode-catch2-test-adapter",
+		"eamodio.gitlens",
+		"cschlosser.doxdocgen",
+		"psioniq.psi-header",
+		"mhutchie.git-graph",
+		"gruntfuggly.todo-tree",
+		"ibm.output-colorizer",
+		"wayou.vscode-todo-highlight",
+		"coenraads.bracket-pair-colorizer",
+		"vscode-icons-team.vscode-icons",
+		"emmanuelbeziat.vscode-great-icons",
+		"hbenl.vscode-test-explorer",
+		"usernamehw.errorlens"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"containerUser": "vscode"
+}
